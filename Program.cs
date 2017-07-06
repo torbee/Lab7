@@ -83,19 +83,15 @@ namespace Lab7
                 if (input >= 1 && input <= 13)
                 {
                     Console.WriteLine($"Student {input} is {firstname[input]} {lastname[input]}.");
-                    //Console.WriteLine($"What would you like to learn about ? (enter 'hometown' or 'favorite food'): ");
-                    //string moreinfo = Console.ReadLine();
                 }
                 else
                 {
                     Console.WriteLine("Student does not exist. Please enter a number between 1 and 13.");
                 }
 
-                //put this in a method?
-                Console.WriteLine($"What would you like to learn about ? (enter 'hometown' or 'favorite food'): ");
+                Console.WriteLine($"What would you like to learn about {firstname[input]}? (enter 'hometown' or 'favorite food'): ");
                 string moreinfo = Console.ReadLine();
                 moreinfo = moreinfo.ToLower();
-
 
                 if (moreinfo == "hometown")
                 {
@@ -120,12 +116,16 @@ namespace Lab7
                     while (favfoods[input] == "")
                     {
                         Console.WriteLine($"{firstname[input]} has not provided this information");
+                        break;
                     }
                 }
                 else
                 {
                     Console.WriteLine("That data does not exist. Please try again.");
                 }
+                //Console.WriteLine($"Would you like to learn more information about {firstname[input]}?");
+                //string moreInfoAgain = Console.ReadLine();
+                //wanted to throw in another loop or method but then it wouldn't pull from the lists
                 run = Continue();
             }
         }
